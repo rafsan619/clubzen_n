@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="none" role="img" aria-label="Club Zen">
+  <path
+    d="M82 24C73.5 14.8 61.8 9 48.5 9 26.7 9 9 26.7 9 48.5S26.7 88 48.5 88c13.3 0 25-5.8 33.5-15"
+    stroke="#0A0A0A"
+    stroke-width="14"
+    stroke-linecap="butt"
+  />
+  <g transform="skewX(-12) translate(8 0)">
+    <path d="M34 30h36L52 46H28z" fill="#A2E635" stroke="#0A0A0A" stroke-width="1.4" stroke-linejoin="miter"/>
+    <path d="M48 46L34 62h36L56 46H48z" fill="#A2E635" stroke="#0A0A0A" stroke-width="1.4" stroke-linejoin="miter"/>
+    <path d="M34 62h36L52 78H28z" fill="#A2E635" stroke="#0A0A0A" stroke-width="1.4" stroke-linejoin="miter"/>
+  </g>
+</svg>

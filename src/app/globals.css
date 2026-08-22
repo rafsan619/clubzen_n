@@ -1,26 +1,93 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --zen-offwhite: #f5f5f2;
+  --zen-black: #0a0a0a;
+  --zen-gray: #8a8a86;
+  --zen-gray-soft: #d8d8d2;
+  --zen-green: #a2e635;
+  --zen-green-deep: #84cc16;
+  --background: #1a1a1a;
+  --foreground: #0a0a0a;
 }
 
 @theme inline {
+  --color-zen-offwhite: var(--zen-offwhite);
+  --color-zen-black: var(--zen-black);
+  --color-zen-gray: var(--zen-gray);
+  --color-zen-gray-soft: var(--zen-gray-soft);
+  --color-zen-green: var(--zen-green);
+  --color-zen-green-deep: var(--zen-green-deep);
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --font-display: var(--font-display);
+  --font-sans: var(--font-body);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-body), system-ui, sans-serif;
+  overflow-x: hidden;
+}
+
+::selection {
+  background: var(--zen-green);
+  color: var(--zen-black);
+}
+
+.font-display {
+  font-family: var(--font-display), Impact, sans-serif;
+  letter-spacing: -0.02em;
+}
+
+.text-balance {
+  text-wrap: balance;
+}
+
+/* Subtle editorial grain on sections */
+.editorial-grain::after {
+  content: "";
+  pointer-events: none;
+  position: absolute;
+  inset: 0;
+  opacity: 0.035;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+/* Hide scrollbars in lookbook carousels */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.hero-glass-tile {
+  border: 1px solid rgba(10, 10, 10, 0.07);
+  background: transparent;
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.28),
+    inset 0 -1px 0 rgba(10, 10, 10, 0.04);
+}
+
+.hero-glass-tile:nth-child(2),
+.hero-glass-tile:nth-child(7),
+.hero-glass-tile:nth-child(11) {
+  transform: translate(0.6px, -0.4px);
+}
+
+.hero-glass-tile:nth-child(3),
+.hero-glass-tile:nth-child(6),
+.hero-glass-tile:nth-child(10) {
+  transform: translate(-0.5px, 0.5px);
 }
